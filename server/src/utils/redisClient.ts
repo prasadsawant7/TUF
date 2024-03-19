@@ -1,7 +1,7 @@
 import { Redis } from "ioredis";
 import { promisify } from "util";
 
-const redisClient: Redis = new Redis();
+const redisClient: Redis = new Redis(process.env.REDIS_URL);
 
 redisClient.on("error", (err) => {
   console.error("Redis error:", err);
