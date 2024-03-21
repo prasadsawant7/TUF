@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -18,6 +18,22 @@ module.exports = {
     },
     extend: {
       colors: {
+        leetcode: {
+          fg: "#FFFFFF",
+          bg: "#1A1A1A",
+          nav: "#282828",
+          card: "#2A2A2A",
+          table: {
+            fg: {
+              head: "#B3B3B3",
+              body: "#FFFFFF",
+            },
+            bg: {
+              1: "#1A1A1A",
+              2: "#2A2A2A",
+            },
+          },
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -72,6 +88,17 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
+    screens: {
+      mobile: { min: "320px", max: "480px" },
+
+      minitab: { min: "481px", max: "768px" },
+
+      tab: { min: "769px", max: "1080px" },
+
+      laptop: { min: "1081px", max: "1440px" },
+
+      desktop: { min: "1441px" },
+    },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
