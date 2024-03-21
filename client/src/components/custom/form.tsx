@@ -28,7 +28,7 @@ import { getLanguage } from "@/lib/code";
 import { encode } from "js-base64";
 import axios from "axios";
 
-const languageOptions: langOpts = [
+export const languageOptions: langOpts = [
   {
     value: "76",
     label: "C++ (Clang 7.0.1)",
