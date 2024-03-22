@@ -123,18 +123,19 @@ const columns: ColumnDef<Submission>[] = [
   },
   {
     accessorKey: "submitted_at",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          className="text-base hover:bg-leetcode-card hover:text-leetcode-table-fg-head"
-        >
-          Submission Time
-          <CaretSortIcon className="ml-2 h-4 w-4" />
-        </Button>
-      );
-    },
+    // header: ({ column }) => {
+    //   return (
+    //     <Button
+    //       variant="ghost"
+    //       onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+    //       className="text-base hover:bg-leetcode-card hover:text-leetcode-table-fg-head"
+    //     >
+    //       Submission Time
+    //       <CaretSortIcon className="ml-2 h-4 w-4" />
+    //     </Button>
+    //   );
+    // },
+    header: "Submission Time",
     cell: ({ row }) => {
       const formattedDate = formatISODate(row.getValue("submitted_at"));
       return <div>{formattedDate}</div>;
@@ -151,7 +152,7 @@ const columns: ColumnDef<Submission>[] = [
           <DropdownMenuTrigger asChild>
             <Button
               variant="ghost"
-              className="h-8 w-8 p-0"
+              className="h-8 w-8 p-0 hover:bg-leetcode-nav hover:text-leetcode-fg"
             >
               <span className="sr-only">Open Menu</span>
               <DotsHorizontalIcon className="h-4 w-4" />
@@ -309,7 +310,7 @@ export default function Submissions() {
                   className={
                     index % 2 === 0
                       ? "border-none bg-leetcode-table-bg-2 text-base text-leetcode-table-fg-body hover:bg-leetcode-table-bg-2"
-                      : "border-none bg-leetcode-table-bg-1 text-base text-leetcode-table-fg-head hover:bg-leetcode-table-bg-1"
+                      : "border-none bg-leetcode-table-bg-1 text-base text-leetcode-table-fg-body hover:bg-leetcode-table-bg-1"
                   }
                 >
                   {row.getVisibleCells().map((cell) => (

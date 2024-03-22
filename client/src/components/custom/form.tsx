@@ -141,6 +141,7 @@ const SubmissionForm: FC = () => {
                 <FormLabel>Username</FormLabel>
                 <FormControl>
                   <Input
+                    className="rounded-md border-0 bg-leetcode-card"
                     placeholder="prasadsawant7"
                     {...field}
                   />
@@ -163,12 +164,13 @@ const SubmissionForm: FC = () => {
                     value={field.value}
                     defaultValue={"92"}
                   >
-                    <SelectTrigger className="w-[220px]">
+                    <SelectTrigger className="w-[220px] rounded-md border-0 bg-leetcode-card">
                       <SelectValue placeholder="Select Code Language" />
                     </SelectTrigger>
-                    <SelectContent className="bg-leetcode-bg text-leetcode-fg">
+                    <SelectContent className="border-0 bg-leetcode-card text-leetcode-fg">
                       {languageOptions.map((language) => (
                         <SelectItem
+                          className="cursor-pointer"
                           key={language.value}
                           value={language.value}
                         >
@@ -236,7 +238,7 @@ const SubmissionForm: FC = () => {
                 <Textarea
                   {...field}
                   placeholder="Enter your standard input here"
-                  className="h-20 w-full resize-none rounded-md"
+                  className="h-20 w-full resize-none rounded-md border-0 bg-leetcode-card"
                 />
               </FormControl>
               <FormMessage />
